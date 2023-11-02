@@ -9,10 +9,10 @@ import styled from "styled-components";
 
 const Button = styled.button`
   color: var(--darkWhite);
-  border-radius: 30px;
   padding: 6px 40px;
   font-size: 1.8rem;
   margin-block: 10px;
+  border-radius: 30px;
   border: none;
   transition: transform 0.2s; /* Add a transition for smooth scaling */
 

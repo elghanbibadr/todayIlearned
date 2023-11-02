@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
  --orange:rgb(249, 115, 22);
  --purple:rgb(139, 92, 246);
  --dark-gray:#44403c;
+ --lightGray:#78716c;
  --darkWhite:#fafaf9;
   /* For dark mode */
   --image-grayscale: 0;
