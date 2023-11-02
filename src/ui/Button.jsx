@@ -2,6 +2,10 @@ import styled from "styled-components";
 {
   /* <Button text="SCIENCE">SCIENCE</Button> */
 }
+{
+  /*        <Button text="ALL">SCIENCE</Button>
+      <Button text="SHAREFACT">SCIENCE</Button> */
+}
 
 const Button = styled.button`
   color: var(--darkWhite);
@@ -10,6 +14,12 @@ const Button = styled.button`
   font-size: 1.8rem;
   margin-block: 10px;
   border: none;
+  transition: transform 0.2s; /* Add a transition for smooth scaling */
+
+  &:hover {
+    transform: scale(1.1) rotate(-4deg); /* Scale by 10% and rotate by -5 degrees when hovering */
+  }
+
   ${(props) =>
     (props.text === "ALL" || props.text === "SHAREFACT") &&
     `

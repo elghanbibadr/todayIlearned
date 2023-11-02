@@ -9,8 +9,7 @@ const App = () => {
       <Card>
         <p>hello this is a card</p>
       </Card>
-      <Button text="ALL">SCIENCE</Button>
-      <Button text="SHAREFACT">SCIENCE</Button>
+      <Button text="SCIENCE">SCIENCE</Button>
     </div>
   );
 };
