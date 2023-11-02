@@ -1,6 +1,8 @@
 import GlobalStyles from "./styles/GlobalStyles";
-import Button from "./ui/Button";
+import styled from "styled-components";
 import Card from "./ui/Card";
+import FactVoteBtn from "./ui/FactVoteBtn";
+
 const App = () => {
   return (
     <div>
@@ -9,6 +11,9 @@ const App = () => {
       <Card>
         <p>hello this is a card</p>
       </Card>
+      <FactVoteBtn> 👍 10</FactVoteBtn>
+      <FactVoteBtn>⛔️ 10</FactVoteBtn>
+      <FactVoteBtn>🤯 10</FactVoteBtn>
     </div>
   );
 };
