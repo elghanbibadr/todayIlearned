@@ -11,6 +11,11 @@ const Button = styled.button`
   margin-block: 10px;
   border: none;
   ${(props) =>
+    (props.text === "ALL" || props.text === "SHAREFACT") &&
+    `
+    background:linear-gradient(135deg,#3b82f6,#ef4444,#16a34a,#eab308);
+  `}
+  ${(props) =>
     props.text === "FINANCE" &&
     `
     background-color: var(--red);

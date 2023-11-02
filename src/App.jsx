@@ -1,5 +1,5 @@
 import GlobalStyles from "./styles/GlobalStyles";
-
+import Button from "./ui/Button";
 import Card from "./ui/Card";
 const App = () => {
   return (
@@ -9,6 +9,8 @@ const App = () => {
       <Card>
         <p>hello this is a card</p>
       </Card>
+      <Button text="ALL">SCIENCE</Button>
+      <Button text="SHAREFACT">SCIENCE</Button>
     </div>
   );
 };
