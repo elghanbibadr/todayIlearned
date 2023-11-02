@@ -50,6 +50,21 @@ const Button = styled.button`
     `
     background-color: var(--pink);
   `};
+  ${(props) =>
+    props.text === "SOCIETY" &&
+    `
+    background-color: var(--yellow);
+  `};
+  ${(props) =>
+    props.text === "HEALTH" &&
+    `
+    background-color: var(--cyan);
+  `};
+  ${(props) =>
+    props.text === "NEWS" &&
+    `
+    background-color: var(--purple);
+  `};
 `;
 
 export default Button;

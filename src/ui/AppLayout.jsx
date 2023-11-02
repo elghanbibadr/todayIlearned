@@ -1,14 +1,17 @@
+import React from "react";
+import logo from "../../public/logo.png";
+// import Row from "./Row";
 import styled from "styled-components";
-import Button from "../ui/Button";
-import Logo from "../ui/Logo";
+import Button from "./Button";
+
 const H1 = styled.h1`
   font-size: 2.8rem;
 `;
-const Header = () => {
+const AppLayout = () => {
   return (
     <div>
       <div>
-        <Logo />
+        <img src={logo} alt="logo" />
         <H1>TODAY I LEARNED</H1>
       </div>
       <Button text="SHAREFACT">SCIENCE</Button>
@@ -16,4 +19,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AppLayout;

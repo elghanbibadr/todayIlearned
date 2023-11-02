@@ -39,7 +39,7 @@ body {
   color: var(--darkWhite);
   padding: 10px;
   font-size: 1.8rem;
-
+background-color: #292524;
 }
 
 input,
