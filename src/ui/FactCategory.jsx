@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const FactCategory = styled.span`
+  align-self: end;
+
   ${(props) =>
     props.category === "FINANCE" &&
     `
@@ -17,7 +19,7 @@ const FactCategory = styled.span`
      padding:6px 10px;
      font-size: 1.6rem;
     `}
-  ${(props) =>
+    ${(props) =>
     props.category === "HISTORY" &&
     `
       background-color: var(--orange);
@@ -25,7 +27,7 @@ const FactCategory = styled.span`
      padding:6px 10px;
      font-size: 1.6rem;
     `}
-  ${(props) =>
+    ${(props) =>
     props.category === "SCIENCE" &&
     `
       background-color: var(--green);
@@ -33,14 +35,14 @@ const FactCategory = styled.span`
      padding:6px 10px;
      font-size: 1.6rem;
     `}
-  ${(props) =>
+    ${(props) =>
     props.category === "ENTERTAINMENT" &&
     `
       background-color: var(--pink);
       border-radius:30px;
      padding:6px 10px;
      font-size: 1.6rem;
-    `}
+    `};
 `;
 
 export default FactCategory;
