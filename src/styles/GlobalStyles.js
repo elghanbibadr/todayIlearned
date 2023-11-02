@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-
 const GlobalStyles = createGlobalStyle`
 :root {
   /* Indigo */
@@ -12,7 +11,8 @@ const GlobalStyles = createGlobalStyle`
  --cyan:rgb(20, 184, 166);
  --orange:rgb(249, 115, 22);
  --purple:rgb(139, 92, 246);
-
+ --dark-gray:#44403c;
+ --darkWhite:#fafaf9;
   /* For dark mode */
   --image-grayscale: 0;
   --image-opacity: 100%;
@@ -34,8 +34,10 @@ html {
 }
 
 body {
-  font-family :' Coiny,sans-serif';
-  color: var(--color-grey-700);
+  font-family :'Coiny','sans-serif';
+  color: var(--darkWhite);
+  padding: 10px;
+  font-size: 1.8rem;
 
 }
 
