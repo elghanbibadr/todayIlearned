@@ -1,4 +1,5 @@
 import GlobalStyles from "./styles/GlobalStyles";
+import FactCategory from "./ui/FactCategory";
 import Card from "./ui/Card";
 const App = () => {
   return (
