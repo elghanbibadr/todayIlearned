@@ -1,13 +1,18 @@
 import styled from "styled-components";
 import Button from "./Button";
+import Select from "./Select";
 const Input = styled.input`
   background-color: #78716c;
   color: white;
   border-radius: 30px;
+  margin-inline: 10px;
+  width: 300px;
+  max-width: 300px;
   font-size: 1.3rem;
   font-weight: 300;
   font-family: "Sono", monospace;
   padding: 10px;
+  padding-block: 13px;
   border: none;
   ::placeholder {
     color: white !important;
@@ -31,6 +36,7 @@ const AddFactForm = () => {
         <span>200</span>
       </div>
       <Input type="text" placeholder="hello" />
+      <Select />
       <Button text="SHAREFACT">POST</Button>
     </Form>
   );

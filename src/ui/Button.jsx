@@ -14,10 +14,10 @@ const Button = styled.button`
   margin-block: 10px;
   border-radius: 30px;
   border: none;
-  transition: transform 0.2s; /* Add a transition for smooth scaling */
+  transition: transform 0.3s; /* Add a transition for smooth scaling */
 
   &:hover {
-    transform: scale(1.1) rotate(-4deg); /* Scale by 10% and rotate by -5 degrees when hovering */
+    transform: scale(1.1) rotate(-1deg); /* Scale by 10% and rotate by -5 degrees when hovering */
   }
 
   ${(props) =>

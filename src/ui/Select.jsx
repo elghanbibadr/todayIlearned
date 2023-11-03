@@ -1,30 +1,17 @@
-import styled from "styled-components";
-
-const Select = styled.div`
-  position: relative;
-  display: inline-block;
-  background-color: black;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  .custom-options {
-    display: ${(props) => (props["data-isopen"] ? "block" : "none")};
-    position: absolute;
-    background-color: black;
-    color: white;
-    top: 100%;
-    left: 0;
-    right: 0;
-    border-radius: 5px;
-  }
-
-  .custom-option {
-    padding: 10px;
-    cursor: pointer;
-  }
-`;
+const Select = () => {
+  return (
+    <div className="custom-select">
+      <select>
+        <option value="">Open this select menu</option>
+        <option value="">GitHub</option>
+        <option value="">Instagram</option>
+        <option value="">Facebook</option>
+        <option value="">LinkedIn</option>
+        <option value="">Twitter</option>
+        <option value="">Reddit</option>
+      </select>
+    </div>
+  );
+};
 
 export default Select;

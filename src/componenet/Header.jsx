@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 import Card from "../ui/Card";
 import Button from "../ui/Button";
 import AddFactForm from "../ui/Input";
@@ -23,6 +24,7 @@ const LogoBox = styled.div`
 `;
 
 const Header = () => {
+  const [shareNewFactBtnClicked, setNewFactBtnClicked] = useState(false);
   return (
     <>
       <Nav>
@@ -30,9 +32,18 @@ const Header = () => {
           <Logo />
           <H1>TODAY I LEARNED</H1>
         </LogoBox>
-        <Button text="SHAREFACT">SHARE A FACT</Button>
+        {!shareNewFactBtnClicked && (
+          <Button onClick={() => setNewFactBtnClicked(true)} text="SHAREFACT">
+            SHARE A FACT
+          </Button>
+        )}
+        {shareNewFactBtnClicked && (
+          <Button onClick={() => setNewFactBtnClicked(false)} text="SHAREFACT">
+            CLOSE
+          </Button>
+        )}
       </Nav>
-      <AddFactForm />
+      {shareNewFactBtnClicked && <AddFactForm />}
     </>
   );
 };
