@@ -7,6 +7,13 @@ import Row from "./ui/Row";
 import FactVoteBtn from "./ui/FactVoteBtn";
 import FactCategory from "./ui/FactCategory";
 import AppLayout from "./ui/AppLayout";
+
+const P = styled.p`
+  @media (min-width: 886px) {
+    width: 50%;
+    margin-left: 20px;
+  }
+`;
 const App = () => {
   return (
     <>
@@ -16,58 +23,50 @@ const App = () => {
         <SideBar />
         <main>
           <Card>
-            <Row>
-              <p>The less money you spend, the more you save!(Source)</p>
-              <FactCategory category="TECHNOLOGY">Sociaty</FactCategory>
-              <Row type="horizontal" position="end">
-                <FactVoteBtn> 👍 10</FactVoteBtn>
-                <FactVoteBtn>⛔️ 10</FactVoteBtn>
-                <FactVoteBtn>🤯 10</FactVoteBtn>
-              </Row>
+            <P>The less money you spend, the more you save!(Source)</P>
+            <FactCategory category="TECHNOLOGY">Sociaty</FactCategory>
+            <Row type="horizontal" position="end">
+              <FactVoteBtn> 👍 10</FactVoteBtn>
+              <FactVoteBtn>⛔️ 10</FactVoteBtn>
+              <FactVoteBtn>🤯 10</FactVoteBtn>
             </Row>
           </Card>
           <Card>
-            <Row>
-              <p>
-                The shortest war in history lasted 38 minutes! It was between
-                Britain and Zanzibar on August 27, 1896. It was over the
-                ascension of the next Sultan in Zanzibar and resulted in a
-                British victory.(Source)
-              </p>
-              <FactCategory category="TECHNOLOGY">Sociaty</FactCategory>
-              <Row type="horizontal" position="end">
-                <FactVoteBtn> 👍 10</FactVoteBtn>
-                <FactVoteBtn>⛔️ 10</FactVoteBtn>
-                <FactVoteBtn>🤯 10</FactVoteBtn>
-              </Row>
+            <P>
+              The shortest war in history lasted 38 minutes! It was between
+              Britain and Zanzibar on August 27, 1896. It was over the ascension
+              of the next Sultan in Zanzibar and resulted in a British
+              victory.(Source)
+            </P>
+            <FactCategory category="TECHNOLOGY">Sociaty</FactCategory>
+            <Row type="horizontal" position="end">
+              <FactVoteBtn> 👍 10</FactVoteBtn>
+              <FactVoteBtn>⛔️ 10</FactVoteBtn>
+              <FactVoteBtn>🤯 10</FactVoteBtn>
             </Row>
           </Card>
           <Card>
-            <Row>
-              <p>
-                As of 2023, Breaking Bad is the highest-rated TV show on IMDb
-                with a
-              </p>
-              <FactCategory category="TECHNOLOGY">Sociaty</FactCategory>
-              <Row type="horizontal" position="end">
-                <FactVoteBtn> 👍 10</FactVoteBtn>
-                <FactVoteBtn>⛔️ 10</FactVoteBtn>
-                <FactVoteBtn>🤯 10</FactVoteBtn>
-              </Row>
+            <P>
+              As of 2023, Breaking Bad is the highest-rated TV show on IMDb with
+              a
+            </P>
+            <FactCategory category="TECHNOLOGY">Sociaty</FactCategory>
+            <Row type="horizontal" position="end">
+              <FactVoteBtn> 👍 10</FactVoteBtn>
+              <FactVoteBtn>⛔️ 10</FactVoteBtn>
+              <FactVoteBtn>🤯 10</FactVoteBtn>
             </Row>
           </Card>
           <Card>
-            <Row>
-              <p>
-                There is enough DNA in the average person’s body to stretch from
-                the sun to Pluto and back — 17 times
-              </p>
-              <FactCategory category="TECHNOLOGY">Sociaty</FactCategory>
-              <Row type="horizontal" position="end">
-                <FactVoteBtn> 👍 10</FactVoteBtn>
-                <FactVoteBtn>⛔️ 10</FactVoteBtn>
-                <FactVoteBtn>🤯 10</FactVoteBtn>
-              </Row>
+            <P>
+              There is enough DNA in the average person’s body to stretch from
+              the sun to Pluto and back — 17 times
+            </P>
+            <FactCategory category="TECHNOLOGY">Sociaty</FactCategory>
+            <Row type="horizontal" position="end">
+              <FactVoteBtn> 👍 10</FactVoteBtn>
+              <FactVoteBtn>⛔️ 10</FactVoteBtn>
+              <FactVoteBtn>🤯 10</FactVoteBtn>
             </Row>
           </Card>
         </main>

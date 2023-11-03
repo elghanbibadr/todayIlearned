@@ -6,8 +6,8 @@ const FactVoteBtn = styled.button`
   font-size: 1.6rem;
   padding: 3px 16px;
   margin-inline: 5px;
-
   background-color: #78716c;
+  white-space: nowrap;
 `;
 
 export default FactVoteBtn;

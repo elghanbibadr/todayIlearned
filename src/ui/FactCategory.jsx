@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 const FactCategory = styled.span`
   align-self: end;
+  @media (min-width: 786px) {
+    align-self: center;
+  }
 
   ${(props) =>
     props.category === "FINANCE" &&
