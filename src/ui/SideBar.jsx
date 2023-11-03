@@ -5,18 +5,27 @@ const ASIDE = styled.aside`
   display: flex;
   flex-direction: column;
 `;
+
+const buttonLabels = [
+  "ALL",
+  "TECHNOLOGY",
+  "SCIENCE",
+  "FINANCE",
+  "SOCIETY",
+  "ENTERTAINMENT",
+  "HEALTH",
+  "HISTORY",
+  "NEWS",
+];
+
 const SideBar = () => {
   return (
     <ASIDE>
-      <Button text="ALL">ALL</Button>
-      <Button text="TECHNOLOGY">TECHNOLOGY</Button>
-      <Button text="SCIENCE">SCIENCE</Button>
-      <Button text="FINANCE">FINANCE</Button>
-      <Button text="SOCIETY">SOCIETY</Button>
-      <Button text="ENTERTAINMENT">ENTERTAINMENT</Button>
-      <Button text="HEALTH">HEALTH</Button>
-      <Button text="HISTORY">HISTORY</Button>
-      <Button text="NEWS">NEWS</Button>
+      {buttonLabels.map((label, index) => (
+        <Button key={index} text={label}>
+          {label}
+        </Button>
+      ))}
     </ASIDE>
   );
 };
