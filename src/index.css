@@ -9,6 +9,7 @@
     appearance: none;
     /* safari */
     -webkit-appearance: none;
+    text-transform: uppercase;
     font-family: "Sono", monospace !important;
 
     /* other styles for aesthetics */

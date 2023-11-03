@@ -2,13 +2,15 @@ const Select = () => {
   return (
     <div className="custom-select">
       <select>
-        <option value="">Open this select menu</option>
-        <option value="">GitHub</option>
-        <option value="">Instagram</option>
-        <option value="">Facebook</option>
-        <option value="">LinkedIn</option>
-        <option value="">Twitter</option>
-        <option value="">Reddit</option>
+        <option value="">Choose category:</option>
+        <option value="technology">technology</option>
+        <option value="science">science</option>
+        <option value="finance">finance</option>
+        <option value="society">society</option>
+        <option value="entertainment">entertainment</option>
+        <option value="health">health</option>
+        <option value="history">history</option>
+        <option value="news">news</option>
       </select>
     </div>
   );
