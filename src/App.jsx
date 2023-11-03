@@ -1,4 +1,5 @@
 import GlobalStyles from "./styles/GlobalStyles";
+import { CustomSelectComponent } from "./componenet/CustomSelectComponent";
 import styled from "styled-components";
 import Card from "./ui/Card";
 import Header from "./componenet/Header";
@@ -9,6 +10,7 @@ import FactCategory from "./ui/FactCategory";
 import AppLayout from "./ui/AppLayout";
 
 const P = styled.p`
+  font-family: "Sono", monospace;
   @media (min-width: 886px) {
     width: 50%;
     margin-left: 20px;
@@ -71,6 +73,17 @@ const App = () => {
           </Card>
         </main>
       </AppLayout>
+      <div className="custom-select">
+        <select>
+          <option value="">Open this select menu</option>
+          <option value="">GitHub</option>
+          <option value="">Instagram</option>
+          <option value="">Facebook</option>
+          <option value="">LinkedIn</option>
+          <option value="">Twitter</option>
+          <option value="">Reddit</option>
+        </select>
+      </div>
     </>
   );
 };

@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import Card from "../ui/Card";
 import Button from "../ui/Button";
+import AddFactForm from "../ui/Input";
 import Logo from "../ui/Logo";
 const H1 = styled.h1`
   font-size: 2.8rem;
@@ -7,7 +9,7 @@ const H1 = styled.h1`
 `;
 
 const Nav = styled.nav`
-  @media (min-width: 786px) {
+  @media (min-width: 886px) {
     grid-column: span 2;
     display: flex;
     justify-content: space-between;
@@ -19,15 +21,19 @@ const LogoBox = styled.div`
   display: flex;
   align-items: center;
 `;
+
 const Header = () => {
   return (
-    <Nav>
-      <LogoBox>
-        <Logo />
-        <H1>TODAY I LEARNED</H1>
-      </LogoBox>
-      <Button text="SHAREFACT">SHARE A FACT</Button>
-    </Nav>
+    <>
+      <Nav>
+        <LogoBox>
+          <Logo />
+          <H1>TODAY I LEARNED</H1>
+        </LogoBox>
+        <Button text="SHAREFACT">SHARE A FACT</Button>
+      </Nav>
+      <AddFactForm />
+    </>
   );
 };
 

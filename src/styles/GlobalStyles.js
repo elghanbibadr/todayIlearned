@@ -42,7 +42,6 @@ body {
 background-color: #292524;
 }
 
-input,
 button,
 textarea,
 select {
@@ -50,27 +49,7 @@ select {
   color: inherit;
 }
 
-button {
-  cursor: pointer;
-}
 
-*:disabled {
-  cursor: not-allowed;
-}
-
-select:disabled,
-input:disabled {
-  background-color: var(--color-grey-200);
-  color: var(--color-grey-500);
-}
-
-input:focus,
-button:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid var(--color-brand-600);
-  outline-offset: -1px;
-}
 
 /* Parent selector, finally 😃 */
 button:has(svg) {
@@ -103,5 +82,6 @@ img {
 }
 
 `;
+
 
 export default GlobalStyles;
