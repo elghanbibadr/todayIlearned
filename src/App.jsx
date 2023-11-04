@@ -2,18 +2,27 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Header from "./componenet/Header";
 import SideBar from "./ui/SideBar";
 import AppLayout from "./ui/AppLayout";
+import { QueryClient, QueryClientProvider } from "react-query";
 import Main from "./componenet/Main";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+    },
+  },
+});
 
 const App = () => {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <GlobalStyles />
       <AppLayout>
         <Header />
         <SideBar />
         <Main />
       </AppLayout>
-    </>
+    </QueryClientProvider>
   );
 };
 
