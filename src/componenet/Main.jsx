@@ -32,15 +32,14 @@ const Main = () => {
   return (
     <main>
       {facts.length > 0 &&
-        facts.map(({ id, field, disputed, downvote, factText, upvote }) => (
+        facts.map(({ id, category, disputed, downvote, factText, upvote }) => (
           <Card key={id}>
             <P>{factText}</P>
-            <FactCategory field={field} color="red">
-              {field}
-            </FactCategory>
+            <FactCategory category={category}>{category}</FactCategory>
             <Row type="horizontal" position="end">
               <FactVoteBtn>👍 {upvote}</FactVoteBtn>
               <FactVoteBtn>⛔️ {disputed}</FactVoteBtn>
+
               <FactVoteBtn>🤯 {downvote}</FactVoteBtn>
             </Row>
           </Card>
