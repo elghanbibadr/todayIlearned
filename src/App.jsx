@@ -17,9 +17,6 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
-  useEffect(() => {
-    getFacts().then((data) => console.log(data));
-  }, []);
   return (
     <QueryClientProvider client={queryClient}>
       <GlobalStyles />

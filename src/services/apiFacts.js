@@ -8,7 +8,6 @@ async function getFacts() {
       if (error) {
         throw error;
       }
-     console.log(data)
       // Return the fetched data
       return data;
     } catch (error) {

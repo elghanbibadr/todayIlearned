@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 const FactCategory = styled.span`
   align-self: end;
+  border-radius: 30px;
+  padding: 6px 10px;
+  font-size: 1.6rem;
+
   @media (min-width: 786px) {
     align-self: center;
   }
@@ -10,41 +14,37 @@ const FactCategory = styled.span`
     props.category === "FINANCE" &&
     `
       background-color: var(--red);
-      border-radius:30px;
-     padding:6px 10px;
-     font-size: 1.6rem;
+    
     `}
   ${(props) =>
     props.category === "TECHNOLOGY" &&
     `
       background-color: var(--blue);
-      border-radius:30px;
-     padding:6px 10px;
-     font-size: 1.6rem;
+    
     `}
     ${(props) =>
     props.category === "HISTORY" &&
     `
       background-color: var(--orange);
-      border-radius:30px;
-     padding:6px 10px;
-     font-size: 1.6rem;
+    
     `}
     ${(props) =>
     props.category === "SCIENCE" &&
     `
       background-color: var(--green);
-      border-radius:30px;
-     padding:6px 10px;
-     font-size: 1.6rem;
+    
     `}
     ${(props) =>
     props.category === "ENTERTAINMENT" &&
     `
-      background-color: var(--pink);
-      border-radius:30px;
-     padding:6px 10px;
-     font-size: 1.6rem;
+      background-color: var(--yellow);
+    
+    `};
+  ${(props) =>
+    props.category === "SOCIETY" &&
+    `
+      background-color: var(--yellow) !important;
+    
     `};
 `;
 
