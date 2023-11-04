@@ -3,6 +3,7 @@ import Header from "./componenet/Header";
 import SideBar from "./ui/SideBar";
 import AppLayout from "./ui/AppLayout";
 import { QueryClient, QueryClientProvider } from "react-query";
+
 import Main from "./componenet/Main";
 
 const queryClient = new QueryClient({
