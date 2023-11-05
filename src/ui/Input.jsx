@@ -11,7 +11,7 @@ const Input = styled.input`
   font-size: 1.3rem;
   font-weight: 300;
   font-family: "Sono", monospace;
-  padding: 10px;
+  padding: 10px 20px;
   padding-block: 13px;
   border: none;
   ::placeholder {
@@ -32,10 +32,10 @@ const AddFactForm = () => {
   return (
     <Form>
       <div>
-        <Input type="text" placeholder="hello" />
+        <Input type="text" placeholder="Share a fact with the world" />
         <span>200</span>
       </div>
-      <Input type="text" placeholder="hello" />
+      <Input type="text" placeholder="trustworhty source" />
       <Select />
       <Button text="SHAREFACT">POST</Button>
     </Form>

@@ -1,12 +1,14 @@
 import Row from "../ui/Row";
+import { AppContext } from "../context/AppContext";
 import styled from "styled-components";
+import { useContext } from "react";
 import Button from "../ui/Button";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import Card from "../ui/Card";
 import FactVoteBtn from "../ui/FactVoteBtn";
 import FactCategory from "../ui/FactCategory";
 import getFacts from "../services/apiFacts";
-import { isAuthApiError } from "@supabase/supabase-js";
 
 const P = styled.p`
   font-family: "Sono", monospace;
@@ -17,23 +19,32 @@ const P = styled.p`
 `;
 
 const Main = () => {
+  const { facts, setFacts } = useContext(AppContext);
+
   const {
     isLoading,
-    data: facts,
+    data: queryData,
     error,
   } = useQuery({
     queryKey: ["facts"],
     queryFn: getFacts,
   });
 
+  useEffect(() => {
+    // Update the local state when data is available
+    if (!isLoading && queryData) {
+      setFacts(queryData);
+    }
+  }, [queryData, isLoading]);
+
   if (isLoading) return <p>loading ...</p>;
-  console.log(facts);
+  if (error) return <p>error ...</p>;
 
   return (
     <main>
       {facts.length > 0 &&
         facts.map(({ id, category, disputed, downvote, factText, upvote }) => (
-          <Card key={id}>
+          <Card key={id} id={id}>
             <P>{factText}</P>
             <FactCategory category={category}>{category}</FactCategory>
             <Row type="horizontal" position="end">

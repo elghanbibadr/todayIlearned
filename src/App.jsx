@@ -6,7 +6,6 @@ import AppLayout from "./ui/AppLayout";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import Main from "./componenet/Main";
-import { useEffect } from "react";
 
 const queryClient = new QueryClient({
   defaultOptions: {
