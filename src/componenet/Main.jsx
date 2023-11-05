@@ -19,7 +19,8 @@ const P = styled.p`
 `;
 
 const Main = () => {
-  const { facts, setFacts } = useContext(AppContext);
+  const { facts, setFacts, filteredFacts, setFilteredFacts } =
+    useContext(AppContext);
 
   const {
     isLoading,
@@ -34,6 +35,7 @@ const Main = () => {
     // Update the local state when data is available
     if (!isLoading && queryData) {
       setFacts(queryData);
+      setFilteredFacts(queryData);
     }
   }, [queryData, isLoading]);
 
@@ -43,18 +45,20 @@ const Main = () => {
   return (
     <main>
       {facts.length > 0 &&
-        facts.map(({ id, category, disputed, downvote, factText, upvote }) => (
-          <Card key={id} id={id}>
-            <P>{factText}</P>
-            <FactCategory category={category}>{category}</FactCategory>
-            <Row type="horizontal" position="end">
-              <FactVoteBtn>👍 {upvote}</FactVoteBtn>
-              <FactVoteBtn>⛔️ {disputed}</FactVoteBtn>
+        filteredFacts.map(
+          ({ id, category, disputed, downvote, factText, upvote }) => (
+            <Card key={id} id={id}>
+              <P>{factText}</P>
+              <FactCategory category={category}>{category}</FactCategory>
+              <Row type="horizontal" position="end">
+                <FactVoteBtn>👍 {upvote}</FactVoteBtn>
+                <FactVoteBtn>⛔️ {disputed}</FactVoteBtn>
 
-              <FactVoteBtn>🤯 {downvote}</FactVoteBtn>
-            </Row>
-          </Card>
-        ))}
+                <FactVoteBtn>🤯 {downvote}</FactVoteBtn>
+              </Row>
+            </Card>
+          )
+        )}
     </main>
   );
 };

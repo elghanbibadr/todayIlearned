@@ -11,7 +11,7 @@ const FactCategory = styled.span`
   }
 
   ${(props) =>
-    props.category === "FINANCE" &&
+    props.category.includes("FINANCE") &&
     `
       background-color: var(--red);
     
