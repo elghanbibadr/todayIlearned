@@ -28,13 +28,27 @@ const Form = styled.form`
   grid-column: span 2;
   padding: 20px;
 `;
+
+const Flex = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const addFactFormHandler = async (e) => {
+  e.preventDefault();
+};
+
 const AddFactForm = () => {
   return (
-    <Form>
-      <div>
-        <Input type="text" placeholder="Share a fact with the world" />
+    <Form onSubmit={addFactFormHandler}>
+      <Flex>
+        <Input
+          onChange={() => alert("changed")}
+          type="text"
+          placeholder="Share a fact with the world"
+        />
         <span>200</span>
-      </div>
+      </Flex>
       <Input type="text" placeholder="trustworhty source" />
       <Select />
       <Button text="SHAREFACT">POST</Button>

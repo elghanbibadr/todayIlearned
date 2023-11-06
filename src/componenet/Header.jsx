@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import Card from "../ui/Card";
 import Button from "../ui/Button";
-import AddFactForm from "../ui/Input";
+import AddFactForm from "../ui/AddFactForm";
 import Logo from "../ui/Logo";
 const H1 = styled.h1`
   font-size: 2.8rem;
