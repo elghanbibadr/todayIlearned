@@ -1,6 +1,7 @@
 import GlobalStyles from "./styles/GlobalStyles";
 import getFacts from "./services/apiFacts";
 import Header from "./componenet/Header";
+import { AppContextProvider } from "./context/AppContext";
 import SideBar from "./ui/SideBar";
 import AppLayout from "./ui/AppLayout";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -18,12 +19,14 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <GlobalStyles />
-      <AppLayout>
-        <Header />
-        <SideBar />
-        <Main />
-      </AppLayout>
+      <AppContextProvider>
+        <GlobalStyles />
+        <AppLayout>
+          <Header />
+          <SideBar />
+          <Main />
+        </AppLayout>
+      </AppContextProvider>
     </QueryClientProvider>
   );
 };

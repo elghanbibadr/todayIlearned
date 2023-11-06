@@ -2,8 +2,10 @@ import Card from "./Card";
 import FactVoteBtn from "./FactVoteBtn";
 import styled from "styled-components";
 import FactCategory from "./FactCategory";
+import supabase from "../services/supabase";
 import Row from "./Row";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../context/AppContext";
 
 const P = styled.p`
   font-family: "Sono", monospace;
@@ -12,6 +14,7 @@ const P = styled.p`
     margin-left: 20px;
   }
 `;
+
 const FactCard = ({
   id,
   factText,
@@ -23,6 +26,7 @@ const FactCard = ({
   const [upvote, setUpvote] = useState(currentUpvote);
   const [downVote, setDownVote] = useState(currentDownVote);
   const [dispute, setDispute] = useState(currentDispute);
+  const { facts } = useContext(AppContext);
 
   const [selectedVote, setSelectedVote] = useState("");
 
@@ -49,10 +53,27 @@ const FactCard = ({
     setSelectedVote((prevSelectedVote) =>
       prevSelectedVote === "downvote" ? "" : "downvote"
     );
-    setDownVote((prevDispute) =>
-      selectedVote === "downvote" ? prevDispute - 1 : prevDispute + 1
+    setDownVote((prevDownVote) =>
+      selectedVote === "downvote" ? prevDownVote - 1 : prevDownVote + 1
     );
   };
+
+  useEffect(() => {
+    // Include the dependencies of the useEffect
+    const updateData = async () => {
+      const { data, error } = await supabase
+        .from("facts")
+        .update({ upvote, downvote: downVote, disputed: dispute })
+        .eq("id", id);
+
+      if (error) {
+        console.error("Error updating data:", error);
+      }
+    };
+
+    // Call the updateData function
+    updateData();
+  }, [upvote, downVote, dispute, id]);
 
   return (
     <Card id={id}>
@@ -71,7 +92,6 @@ const FactCard = ({
         >
           ⛔️ {dispute}
         </FactVoteBtn>
-
         <FactVoteBtn
           selected={selectedVote === "downvote"}
           onClick={downVoteHandler}
