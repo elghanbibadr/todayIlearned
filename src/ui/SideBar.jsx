@@ -23,8 +23,11 @@ const buttonLabels = [
 const SideBar = () => {
   const { facts, setFilteredFacts } = useContext(AppContext);
 
-  const factsFilterHandler = (label) =>
-    setFilteredFacts(facts.filter((fact) => fact.category.includes(label)));
+  const factsFilterHandler = (label) => {
+    return label === "ALL"
+      ? setFilteredFacts(facts)
+      : setFilteredFacts(facts.filter((fact) => fact.category.includes(label)));
+  };
 
   return (
     <ASIDE>

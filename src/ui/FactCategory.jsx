@@ -17,33 +17,45 @@ const FactCategory = styled.span`
     
     `}
   ${(props) =>
-    props.category === "TECHNOLOGY" &&
+    props.category.includes("TECHNOLOGY") &&
     `
       background-color: var(--blue);
     
     `}
     ${(props) =>
-    props.category === "HISTORY" &&
+    props.category.includes("HISTORY") &&
     `
       background-color: var(--orange);
     
     `}
     ${(props) =>
-    props.category === "SCIENCE" &&
+    props.category.includes("SCIENCE") &&
     `
       background-color: var(--green);
     
     `}
     ${(props) =>
-    props.category === "ENTERTAINMENT" &&
+    props.category.includes("ENTERTAINMENT") &&
     `
       background-color: var(--yellow);
     
     `};
   ${(props) =>
-    props.category === "SOCIETY" &&
+    props.category.includes("SOCIETY") &&
     `
-      background-color: var(--yellow) !important;
+      background-color: var(--yellow) ;
+    
+    `};
+  ${(props) =>
+    props.category.includes("NEWS") &&
+    `
+      background-color: var(--purple) ;
+    
+    `};
+  ${(props) =>
+    props.category.includes("HEALTH") &&
+    `
+      background-color: var(--cyan) ;
     
     `};
 `;
