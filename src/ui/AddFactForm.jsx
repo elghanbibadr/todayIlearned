@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import Button from "./Button";
+import { useForm } from "react-hook-form";
+import supabase from "../services/supabase";
 import Select from "./Select";
+import { categories } from "../util/helpers";
+
 const Input = styled.input`
   background-color: #78716c;
   color: white;
@@ -34,23 +38,49 @@ const Flex = styled.div`
   align-items: center;
 `;
 
-const addFactFormHandler = async (e) => {
-  e.preventDefault();
-};
-
 const AddFactForm = () => {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = async (newFactData) => {
+    const { data, error } = await supabase
+      .from("facts")
+      .insert([{ id: "99", ...newFactData }])
+      .select();
+
+    if (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <Form onSubmit={addFactFormHandler}>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <Flex>
         <Input
-          onChange={() => alert("changed")}
           type="text"
+          id="factText"
           placeholder="Share a fact with the world"
+          name="factText"
+          {...register("factText")}
         />
         <span>200</span>
       </Flex>
-      <Input type="text" placeholder="trustworhty source" />
-      <Select />
+      <Input
+        type="text"
+        placeholder="trustworhty source"
+        id="factSource"
+        name="factSource"
+        {...register("factSource")}
+      />
+
+      <Select id="category" name="category" {...register("category")}>
+        <option value="">Choose category:</option>
+        {categories.map((category) => (
+          <option key={category.value} value={category.value}>
+            {category.label}
+          </option>
+        ))}
+      </Select>
+
       <Button text="SHAREFACT">POST</Button>
     </Form>
   );

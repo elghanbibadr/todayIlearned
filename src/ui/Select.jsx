@@ -1,19 +1,20 @@
-const Select = () => {
-  return (
-    <div className="custom-select">
-      <select>
-        <option value="">Choose category:</option>
-        <option value="technology">technology</option>
-        <option value="science">science</option>
-        <option value="finance">finance</option>
-        <option value="society">society</option>
-        <option value="entertainment">entertainment</option>
-        <option value="health">health</option>
-        <option value="history">history</option>
-        <option value="news">news</option>
-      </select>
-    </div>
-  );
-};
+import styled from "styled-components";
+
+const Select = styled.select`
+  min-width: 350px;
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  text-transform: uppercase;
+  font-family: "Sono", monospace !important;
+  /* other styles for aesthetics */
+  width: 400px;
+  padding: 0.675em 6em 0.675em 1em;
+  background-color: #78716c;
+  /* border: 1px solid #caced1; */
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+`;
 
 export default Select;
