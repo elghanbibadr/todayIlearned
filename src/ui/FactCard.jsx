@@ -17,11 +17,43 @@ const FactCard = ({
   factText,
   category,
   upvote: currentUpvote,
-  downvote,
-  disputed,
+  downvote: currentDownVote,
+  disputed: currentDispute,
 }) => {
   const [upvote, setUpvote] = useState(currentUpvote);
+  const [downVote, setDownVote] = useState(currentDownVote);
+  const [dispute, setDispute] = useState(currentDispute);
+
   const [selectedVote, setSelectedVote] = useState("");
+
+  const upvoteHandler = () => {
+    setSelectedVote((prevSelectedVote) =>
+      prevSelectedVote === "upvote" ? "" : "upvote"
+    );
+
+    setUpvote((prevUpvote) =>
+      selectedVote === "upvote" ? prevUpvote - 1 : prevUpvote + 1
+    );
+  };
+
+  const disputeHandler = () => {
+    setSelectedVote((prevSelectedVote) =>
+      prevSelectedVote === "disputed" ? "" : "disputed"
+    );
+    setDispute((prevDispute) =>
+      selectedVote === "disputed" ? prevDispute - 1 : prevDispute + 1
+    );
+  };
+
+  const downVoteHandler = () => {
+    setSelectedVote((prevSelectedVote) =>
+      prevSelectedVote === "downvote" ? "" : "downvote"
+    );
+    setDownVote((prevDispute) =>
+      selectedVote === "downvote" ? prevDispute - 1 : prevDispute + 1
+    );
+  };
+
   return (
     <Card id={id}>
       <P>{factText}</P>
@@ -29,22 +61,22 @@ const FactCard = ({
       <Row type="horizontal" position="end">
         <FactVoteBtn
           selected={selectedVote === "upvote"}
-          onClick={() => setSelectedVote("upvote")}
+          onClick={upvoteHandler}
         >
           👍 {upvote}
         </FactVoteBtn>
         <FactVoteBtn
-          onClick={() => setSelectedVote("disputed")}
+          onClick={disputeHandler}
           selected={selectedVote === "disputed"}
         >
-          ⛔️ {disputed}
+          ⛔️ {dispute}
         </FactVoteBtn>
 
         <FactVoteBtn
           selected={selectedVote === "downvote"}
-          onClick={() => setSelectedVote("downvote")}
+          onClick={downVoteHandler}
         >
-          🤯 {downvote}
+          🤯 {downVote}
         </FactVoteBtn>
       </Row>
     </Card>
