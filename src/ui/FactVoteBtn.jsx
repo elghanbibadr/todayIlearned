@@ -7,7 +7,7 @@ const FactVoteBtn = styled.button`
   padding: 3px 16px;
   margin-inline: 5px;
   cursor: pointer;
-  background-color: #78716c;
+  background-color: ${(props) => (props.selected ? "#292524" : "#78716c")};
   transition: background 0.6s;
   white-space: nowrap;
   &:hover {

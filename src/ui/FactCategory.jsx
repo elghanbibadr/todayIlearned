@@ -61,9 +61,3 @@ const FactCategory = styled.span`
 `;
 
 export default FactCategory;
-
-{
-  /* <FactCategory category="FINANCE">Sociaty</FactCategory>
-<FactCategory category="TECHNOLOGY">Sociaty</FactCategory>
-<FactCategory category="ENTERTAINMENT">Sociaty</FactCategory> */
-}
