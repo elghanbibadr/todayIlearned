@@ -1,11 +1,4 @@
 import styled from "styled-components";
-{
-  /* <Button text="SCIENCE">SCIENCE</Button> */
-}
-{
-  /*        <Button text="ALL">SCIENCE</Button>
-      <Button text="SHAREFACT">SCIENCE</Button> */
-}
 
 const Button = styled.button`
   color: var(--darkWhite);

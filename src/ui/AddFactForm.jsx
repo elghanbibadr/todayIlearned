@@ -10,9 +10,8 @@ const Input = styled.input`
   color: white;
   border-radius: 30px;
   margin-inline: 10px;
-  width: 300px;
-  max-width: 300px;
-  font-size: 1.3rem;
+  width: 100%;
+  font-size: 1.5rem;
   font-weight: 300;
   font-family: "Sono", monospace;
   padding: 10px 20px;
@@ -25,17 +24,26 @@ const Input = styled.input`
 
 const Form = styled.form`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
   align-items: center;
   background-color: var(--dark-gray);
   border-radius: 10px;
-  grid-column: span 2;
   padding: 20px;
+  @media (min-width: 886px) {
+    flex-direction: row;
+    grid-column: span 2;
+  }
 `;
 
 const Flex = styled.div`
-  display: flex;
-  align-items: center;
+  width: 100%;
+  @media (min-width: 886px) {
+    display: flex;
+    align-items: center;
+    width: 130%;
+  }
 `;
 const randomId = Math.floor(Math.random() * 10000) + 1;
 

@@ -5,8 +5,8 @@ const FactCategory = styled.span`
   border-radius: 30px;
   padding: 6px 10px;
   font-size: 1.6rem;
-
-  @media (min-width: 786px) {
+  margin-block: 10px;
+  @media (min-width: 886px) {
     align-self: center;
   }
 

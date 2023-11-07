@@ -6,6 +6,14 @@ import { AppContext } from "../context/AppContext";
 const ASIDE = styled.aside`
   display: flex;
   flex-direction: column;
+  width: 90%;
+  @media (min-width: 500px) {
+    width: 70%;
+  }
+  @media (min-width: 886px) {
+    width: 100%;
+  }
+  margin-inline: auto;
 `;
 
 const buttonLabels = [
