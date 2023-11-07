@@ -11,49 +11,49 @@ const FactCategory = styled.span`
   }
 
   ${(props) =>
-    props.category.includes("FINANCE") &&
+    props.category.toUpperCase().includes("FINANCE") &&
     `
       background-color: var(--red);
     
     `}
   ${(props) =>
-    props.category.includes("TECHNOLOGY") &&
+    props.category.toUpperCase().includes("TECHNOLOGY") &&
     `
       background-color: var(--blue);
     
     `}
     ${(props) =>
-    props.category.includes("HISTORY") &&
+    props.category.toUpperCase().includes("HISTORY") &&
     `
       background-color: var(--orange);
     
     `}
     ${(props) =>
-    props.category.includes("SCIENCE") &&
+    props.category.toUpperCase().includes("SCIENCE") &&
     `
       background-color: var(--green);
     
     `}
     ${(props) =>
-    props.category.includes("ENTERTAINMENT") &&
+    props.category.toUpperCase().includes("ENTERTAINMENT") &&
     `
       background-color: var(--yellow);
     
     `};
   ${(props) =>
-    props.category.includes("SOCIETY") &&
+    props.category.toUpperCase().includes("SOCIETY") &&
     `
       background-color: var(--yellow) ;
     
     `};
   ${(props) =>
-    props.category.includes("NEWS") &&
+    props.category.toUpperCase().includes("NEWS") &&
     `
       background-color: var(--purple) ;
     
     `};
   ${(props) =>
-    props.category.includes("HEALTH") &&
+    props.category.toUpperCase().includes("HEALTH") &&
     `
       background-color: var(--cyan) ;
     

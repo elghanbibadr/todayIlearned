@@ -78,7 +78,7 @@ const FactCard = ({
   return (
     <Card id={id}>
       <P>{factText}</P>
-      <FactCategory category={category}>{category}</FactCategory>
+      <FactCategory category={category}>{category.toUpperCase()}</FactCategory>
       <Row type="horizontal" position="end">
         <FactVoteBtn
           selected={selectedVote === "upvote"}

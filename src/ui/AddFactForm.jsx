@@ -50,10 +50,18 @@ const randomId = Math.floor(Math.random() * 10000) + 1;
 const AddFactForm = () => {
   const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = async (newFactData) => {
+  const onSubmit = async (factData) => {
     const { data, error } = await supabase
       .from("facts")
-      .insert([{ id: randomId, ...newFactData }])
+      .insert([
+        {
+          id: randomId,
+          downvote: 0,
+          disputed: 0,
+          upvote: 0,
+          ...factData,
+        },
+      ])
       .select();
 
     if (error) {
