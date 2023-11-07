@@ -37,18 +37,21 @@ const Flex = styled.div`
   display: flex;
   align-items: center;
 `;
+const randomId = Math.floor(Math.random() * 10000) + 1;
 
 const AddFactForm = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (newFactData) => {
     const { data, error } = await supabase
       .from("facts")
-      .insert([{ id: "99", ...newFactData }])
+      .insert([{ id: randomId, ...newFactData }])
       .select();
 
     if (error) {
       console.log(error);
+    } else {
+      reset(); // Reset the form when there are no errors
     }
   };
 
