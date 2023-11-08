@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Button from "./Button";
 import { useForm } from "react-hook-form";
 import supabase from "../services/supabase";
+import toast from "react-hot-toast";
 import Select from "./Select";
 import { categories } from "../util/helpers";
 
@@ -66,7 +67,9 @@ const AddFactForm = () => {
 
     if (error) {
       console.log(error);
+      toast.error("something went wrong");
     } else {
+      toast.success("new fact added successfully");
       reset(); // Reset the form when there are no errors
     }
   };

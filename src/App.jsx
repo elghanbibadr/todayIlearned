@@ -1,5 +1,6 @@
 import GlobalStyles from "./styles/GlobalStyles";
 import getFacts from "./services/apiFacts";
+import toast, { Toaster } from "react-hot-toast";
 import Header from "./componenet/Header";
 import { AppContextProvider } from "./context/AppContext";
 import SideBar from "./ui/SideBar";
@@ -27,6 +28,26 @@ const App = () => {
           <Main />
         </AppLayout>
       </AppContextProvider>
+      <Toaster
+        position="top-center"
+        gutter="12"
+        containerStyle={{ margin: "10px" }}
+        toastOptions={{
+          success: {
+            duration: 3000,
+          },
+          error: {
+            duration: 5000,
+          },
+          style: {
+            fontSize: "16px",
+            maxWidth: "500px",
+            color: "white",
+            padding: "5px",
+            backgroundColor: "var(--dark-gray)",
+          },
+        }}
+      />
     </QueryClientProvider>
   );
 };
