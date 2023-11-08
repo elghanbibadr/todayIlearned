@@ -41,9 +41,10 @@ const App = () => {
           },
           style: {
             fontSize: "16px",
+            fontWeight: "400",
             maxWidth: "500px",
             color: "white",
-            padding: "5px",
+            padding: "10px",
             backgroundColor: "var(--dark-gray)",
           },
         }}

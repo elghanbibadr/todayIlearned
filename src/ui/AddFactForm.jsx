@@ -5,11 +5,13 @@ import supabase from "../services/supabase";
 import toast from "react-hot-toast";
 import Select from "./Select";
 import { categories } from "../util/helpers";
+import { useState } from "react";
 
 const Input = styled.input`
   background-color: #78716c;
   color: white;
   border-radius: 30px;
+  position: relative;
   margin-inline: 10px;
   width: 100%;
   font-size: 1.5rem;
@@ -40,16 +42,30 @@ const Form = styled.form`
 
 const Flex = styled.div`
   width: 100%;
+  position: relative;
   @media (min-width: 886px) {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    /* align-items: center */
     width: 130%;
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    align-items: center;
+    gap: 10px;
   }
+`;
+
+const Error = styled.h6`
+  position: absolute;
+  bottom: -23px;
+  left: 20px;
+  color: red;
 `;
 const randomId = Math.floor(Math.random() * 10000) + 1;
 
 const AddFactForm = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, formState } = useForm();
+  const { errors } = formState;
+  console.log(errors);
 
   const onSubmit = async (factData) => {
     const { data, error } = await supabase
@@ -82,19 +98,30 @@ const AddFactForm = () => {
           id="factText"
           placeholder="Share a fact with the world"
           name="factText"
-          {...register("factText")}
+          {...register("factText", {
+            required: "this field is required",
+          })}
         />
         <span>200</span>
+        {errors?.factText?.message && <Error>{errors.factText.message}</Error>}
       </Flex>
       <Input
         type="text"
         placeholder="trustworhty source"
         id="factSource"
         name="factSource"
-        {...register("factSource")}
+        {...register("factSource", {
+          required: "this field is required",
+        })}
       />
 
-      <Select id="category" name="category" {...register("category")}>
+      <Select
+        id="category"
+        name="category"
+        {...register("category", {
+          required: "this field is required",
+        })}
+      >
         <option value="">Choose category:</option>
         {categories.map((category) => (
           <option key={category.value} value={category.value}>
